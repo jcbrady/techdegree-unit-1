@@ -36,10 +36,8 @@ const quotes = [
   }
 ]
 
-// access array items
-// turn quotes array into an array
-// then access objects with "for in" loop
-// notice in console they're not in curly bracket {} objects
+// SOME DIFFERENT WAYS OF LOOPING THROUGH THE ARRAY:
+// outputs text
 for (i = 0; i < quotes.length; i++) {
   let arr = quotes[i]
   for (let propName in arr) {
@@ -47,7 +45,7 @@ for (i = 0; i < quotes.length; i++) {
   }
 }
 
-// OR this way, they are in {} objects
+// outputs {objects}
 for (let propName in quotes) {
   console.log(quotes[propName])
 }
