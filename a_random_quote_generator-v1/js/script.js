@@ -36,9 +36,36 @@ const quotes = [
   }
 ]
 
+// access array items
+// turn quotes array into an array
+// then access objects with "for in" loop
+// for (i = 0; i < quotes.length; i++) {
+//   let arr = quotes[i]
+//   for (let propName in arr) {
+//     console.log(arr[propName])
+//   }
+// }
+
+// OR this way?
+const makeArray1 = Object.keys(quotes)
+//console.log(makeArray1)
+const makeArray2 = Object.values(quotes)
+//console.log(makeArray2)
+
+for (let propName in quotes) {
+  // console.log(quotes) // (5) [{…}, {…}, {…}, {…}, {…}]
+  // console.log(quotes[0]) // repeats first key and value 5 times
+  console.log(quotes[propName])
+
+  // console.log(quotes[i].quote) // works in a for loop
+  // console.log(quotes[i].source) // works in a for loop
+}
+
 //console.log(quotes)
 //console.log(quotes[0].quote)
 //console.log(quotes[0].source)
+
+// OBJECT METHODS
 //console.log(Object.keys(quotes))
 //console.log(Object.values(quotes))
 //console.log(Object.keys(year))
@@ -49,24 +76,6 @@ const quotes = [
 //   console.log(quotes[propName])
 // }
 
-const student = [
-  {
-    name: "Quincy",
-    grades: [60, 85, 90, 71]
-  },
-  {
-    name: "Casey",
-    grades: [70, 95, 95, 81]
-  }
-]
-
-for (i = 0; i < student.length; i++) {
-  let arr = student[i]
-  console.log(arr)
-  for (let propName in arr) {
-    console.log(`In the "for in" loop: ${arr[propName]}`)
-  }
-}
 /***
  * `getRandomQuote` function
  ***/
