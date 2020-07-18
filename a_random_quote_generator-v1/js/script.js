@@ -39,42 +39,18 @@ const quotes = [
 // access array items
 // turn quotes array into an array
 // then access objects with "for in" loop
-// for (i = 0; i < quotes.length; i++) {
-//   let arr = quotes[i]
-//   for (let propName in arr) {
-//     console.log(arr[propName])
-//   }
-// }
-
-// OR this way?
-const makeArray1 = Object.keys(quotes)
-//console.log(makeArray1)
-const makeArray2 = Object.values(quotes)
-//console.log(makeArray2)
-
-for (let propName in quotes) {
-  // console.log(quotes) // (5) [{…}, {…}, {…}, {…}, {…}]
-  // console.log(quotes[0]) // repeats first key and value 5 times
-  console.log(quotes[propName])
-
-  // console.log(quotes[i].quote) // works in a for loop
-  // console.log(quotes[i].source) // works in a for loop
+// notice in console they're not in curly bracket {} objects
+for (i = 0; i < quotes.length; i++) {
+  let arr = quotes[i]
+  for (let propName in arr) {
+    console.log(arr[propName])
+  }
 }
 
-//console.log(quotes)
-//console.log(quotes[0].quote)
-//console.log(quotes[0].source)
-
-// OBJECT METHODS
-//console.log(Object.keys(quotes))
-//console.log(Object.values(quotes))
-//console.log(Object.keys(year))
-
-// for in loop - logs all keys and values
-// for (let propName in quotes) {
-//   console.log(propName)
-//   console.log(quotes[propName])
-// }
+// OR this way, they are in {} objects
+for (let propName in quotes) {
+  console.log(quotes[propName])
+}
 
 /***
  * `getRandomQuote` function
