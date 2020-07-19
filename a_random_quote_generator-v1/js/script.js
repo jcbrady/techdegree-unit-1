@@ -45,34 +45,44 @@ const quotes = [
 ]
 
 // outputs the raw array and objects to the console
-console.log(quotes)
+//console.log(quotes)
 
 // SOME DIFFERENT WAYS OF LOOPING THROUGH THE ARRAY OF OBJECTS:
 // outputs text
-for (i = 0; i < quotes.length; i++) {
-  let arr = quotes[i]
-  for (let propName in arr) {
-    console.log(arr[propName])
-  }
-}
+// for (i = 0; i < quotes.length; i++) {
+//   let arr = quotes[i]
+//   for (let propName in arr) {
+//     console.log(arr[propName])
+//   }
+// }
 
 // outputs {objects}
-for (let propName in quotes) {
-  console.log(quotes[propName])
-}
+// for (let propName in quotes) {
+//   console.log(quotes[propName])
+// }
 
 /***
  * `getRandomQuote` function
  ***/
 
-function getRandomQuote() {}
+function getRandomQuote() {
+  let randomNumber = Math.floor(Math.random() * quotes.length)
+  let randomQuote = quotes[randomNumber]
+  // console.log("randomNumber inside getRandomQuote function: " + randomNumber)
+  // console.log("randomQuote: " + randomQuote.quote + " " + randomQuote.source)
+  // console.log({ quote: randomQuote })
+
+  // console.log(randomQuote)
+
+  return randomQuote
+}
 
 /***
  * `printQuote` function
  ***/
-let count = 0
 function printQuote() {
-  console.log(count++)
+  let html = getRandomQuote()
+  console.log(html)
 }
 
 /***
@@ -81,3 +91,5 @@ function printQuote() {
  ***/
 
 document.getElementById("load-quote").addEventListener("click", printQuote, false)
+
+//console.log(getRandomQuote())
