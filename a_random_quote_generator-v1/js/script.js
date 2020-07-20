@@ -14,7 +14,7 @@ project 1 - A Random Quote Generator
 
 const quotes = [
   {
-    quote: "The truth is of course is that there is no journey. We are arriving and departing all at the same time.",
+    quote: "The truth of course is that there is no journey. We are arriving and departing all at the same time.",
     source: "David Bowie",
     year: "1980's",
     citation: "Brainyquote.com"
@@ -59,22 +59,22 @@ function getRandomQuote() {
  ***/
 
 function printQuote() {
-  let rando = getRandomQuote()
+  let randomNum = getRandomQuote()
   let html = `
-  <p class="quote">${rando.quote}</p>
-  <p class="source">${rando.source}
+  <p class="quote">${randomNum.quote}</p>
+  <p class="source">${randomNum.source}
   `
-  if (rando.citation) {
-    html += `<span class="citation">${rando.citation}</span>`
+  if (randomNum.citation) {
+    html += `<span class="citation">${randomNum.citation}</span>`
   }
-  if (rando.year) {
-    html += `<span class="year">${rando.year}</span>`
+  if (randomNum.year) {
+    html += `<span class="year">${randomNum.year}</span>`
   }
-  if (rando.tag) {
-    html += `<span class="year">${rando.tag}</span>`
+  if (randomNum.tag) {
+    html += `<span class="year">${randomNum.tag}</span>`
   }
 
-  html += "</p>"
+  html += `</p>`
   document.getElementById("quote-box").innerHTML = html
 
   changeColor()
