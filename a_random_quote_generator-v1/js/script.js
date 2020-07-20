@@ -81,7 +81,27 @@ function getRandomQuote() {
  * `printQuote` function
  ***/
 function printQuote() {
-  let html = getRandomQuote()
+  let rando = getRandomQuote()
+  let html = `
+  <p class="quote">${rando.quote}</p>
+  <p class="source">${rando.source}
+  `
+  if (rando.citation) {
+    console.log("citation")
+    //html +=   `<span class="citation"> quote citation </span>
+    // <span class="year"> quote year </span>
+    //</p>`
+  }
+  if (rando.year) {
+    console.log("year")
+  }
+  if (rando.living) {
+    console.log("yes, they are still alive!")
+  } else {
+    console.log("They have passed away.")
+  }
+
+  console.log(rando)
   console.log(html)
 }
 
