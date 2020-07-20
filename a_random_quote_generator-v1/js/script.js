@@ -91,7 +91,7 @@ function changeColor() {
 setInterval(function () {
   changeColor()
   printQuote()
-}, 7000)
+}, 15000)
 
 /***
  * click event listener for the print quote button - Listens for user interaction button click
