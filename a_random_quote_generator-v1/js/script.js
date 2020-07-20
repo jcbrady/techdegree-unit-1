@@ -23,7 +23,8 @@ const quotes = [
     quote: "I never studied anything, really. I didn't study the drums. I joined bands and made all the mistakes on stage.",
     source: "Ringo Starr",
     year: "1960's",
-    citation: "Brainyquote.com"
+    citation: "Brainyquote.com",
+    tag: " — Yes, he's still alive!"
   },
   {
     quote: "Each generation wants new symbols, new people, new names. They want to divorce themselves from their predecessors.",
@@ -69,10 +70,28 @@ function printQuote() {
   if (rando.year) {
     html += `<span class="year">${rando.year}</span>`
   }
+  if (rando.tag) {
+    html += `<span class="year">${rando.tag}</span>`
+  }
 
   html += "</p>"
   document.getElementById("quote-box").innerHTML = html
+
+  changeColor()
 }
+
+function changeColor() {
+  let range = 256
+  let randomNumber1 = Math.floor(Math.random() * range)
+  let randomNumber2 = Math.floor(Math.random() * range)
+  let randomNumber3 = Math.floor(Math.random() * range)
+  document.body.style.backgroundColor = `rgb(${randomNumber1}, ${randomNumber2}, ${randomNumber3})`
+}
+
+setInterval(function () {
+  changeColor()
+  printQuote()
+}, 7000)
 
 /***
  * click event listener for the print quote button - Listens for user interaction button click
