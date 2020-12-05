@@ -9,7 +9,8 @@ project 1 - A Random Quote Generator
 
 /***
  * `quotes` array - Stores data in an array of objects. Note that some objects
- * have more properties than others.
+ * have more properties than others. This makes adding content optional and more flexible for the
+ * content creator.
  ***/
 
 const quotes = [
@@ -55,7 +56,7 @@ function getRandomQuote() {
 /***
  * `printQuote` function - calls the getRandomQuote() function and puts the
  * return results in a variable. Builds an html object and uses condiional logic
- * based on if the array contains the ressults.
+ * based on whether or not the array contains the ressults.
  ***/
 
 function printQuote() {
@@ -64,6 +65,7 @@ function printQuote() {
   <p class="quote">${randomNum.quote}</p>
   <p class="source">${randomNum.source}
   `
+  // Display only if the object contains any of these optional properties: citation, year, or tag
   if (randomNum.citation) {
     html += `<span class="citation">${randomNum.citation}</span>`
   }
@@ -82,9 +84,9 @@ function printQuote() {
 
 function changeColor() {
   let range = 256
-  let randomNumber1 = Math.floor(Math.random() * range)
-  let randomNumber2 = Math.floor(Math.random() * range)
-  let randomNumber3 = Math.floor(Math.random() * range)
+  const randomNumber1 = Math.floor(Math.random() * range)
+  const randomNumber2 = Math.floor(Math.random() * range)
+  const randomNumber3 = Math.floor(Math.random() * range)
   document.body.style.backgroundColor = `rgb(${randomNumber1}, ${randomNumber2}, ${randomNumber3})`
 }
 
